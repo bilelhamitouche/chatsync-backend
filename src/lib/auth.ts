@@ -8,6 +8,12 @@ export const auth = betterAuth({
     provider: 'postgresql',
   }),
   trustedOrigins: ['http://localhost:3000'],
+  session: {
+    cookieCache: {
+      enabled: true,
+      maxAge: 60 * 5,
+    },
+  },
   cookies: {
     secure: true,
     sameSite: 'none',
